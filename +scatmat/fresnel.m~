@@ -1,0 +1,10 @@
+function [ output_args ] = fresnel(eps_1,eps_2,ky,pol)
+%FRESNEL Summary of this function goes here
+%   Detailed explanation goes here
+kix=sqrt(eps_1^2-
+if strcmp(pol,'te')
+elseif strcmp(pol,'tm')
+end
+
+end
+

@@ -1,0 +1,13 @@
+function [r,t] = multilayerscat(k0,ky,n,d,pol)
+%MULTILAYERSCAT Summary of this function goes here
+%   Detailed explanation goes here
+ky0=ky/k0;
+Nl=numel(n);
+S1=scatmat.layerscat(n(1),n(2),ky0,pol);
+for ii=2:Nl-1
+S2=scatmat.layerscat(n(ii),n(ii+1),ky0,pol);
+phi=ca;
+end
+
+end
+

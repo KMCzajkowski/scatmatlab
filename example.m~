@@ -1,0 +1,24 @@
+lam=500
+n1=1
+n3=4
+d2=0.25*lam/np.sqrt(n1*n3)
+#n2vec=np.linspace(n1,n3,100)
+#n2vec=np.array([np.sqrt(n1*n3)])
+
+th=0
+k0=2*np.pi/lam
+k1x=k0*n1*np.cos(th)+0j
+ky=k0*n1*np.sin(th)+0j
+
+R=0.0*n2vec
+
+for ii=1:numel(n2vec)
+    n2=n2vec(ii);
+    s12=prepare_layer_matrix(n1,n2,k1x,ky);
+    k2x=calc_kx(k1x,ky,n1,n2);
+    s23=prepare_layer_matrix(n2,n3,k2x,ky);
+    s13=airy(s12,s23,k2x,d2);
+    R(ii)=np.abs(s13[1,0])^2;
+end
+plot(n2vec,R)
+s23
