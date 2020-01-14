@@ -1,9 +1,0 @@
-function [ output_args ] = airy(S1,S2,phi)
-%AIRY Summary of this function goes here
-%   Detailed explanation goes here
-t12=S1(1,1);r21=S1(1,2);r12=S(2,1);t21=S1(2,2);
-t23=S1(1,1);r32=S1(1,2);r23=S(2,1);t32=S1(2,2);
-
-t13=(t12*t23*exp(1i*phi))/(1-r21*r23*e);
-end
-
